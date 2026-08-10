@@ -16,6 +16,7 @@ class BTreeDemo {
 private:
     BTreeNode* root;
 
+    // 手工构造一棵示例 B 树。
     BTreeNode* buildSampleTree() {
         //             [18 | 35]
         //           /     |      \
@@ -47,6 +48,7 @@ private:
         return r;
     }
 
+    // 释放整棵 B 树。
     void destroy(BTreeNode* node) {
         if (node == nullptr) {
             return;
@@ -59,6 +61,7 @@ private:
         delete node;
     }
 
+    // 输出一个结点中的关键字。
     void printNode(BTreeNode* node) const {
         cout << '[';
         for (int i = 0; i < node->keyCount; ++i) {
@@ -71,16 +74,20 @@ private:
     }
 
 public:
+    // 初始化为空树。
     BTreeDemo() : root(nullptr) {}
 
+    // 析构时释放结点。
     ~BTreeDemo() {
         destroy(root);
     }
 
+    // 构造样例树。
     void buildSample() {
         root = buildSampleTree();
     }
 
+    // 演示 B 树查找路径。
     void search(int target) const {
         BTreeNode* current = root;
         cout << "search " << target << ": ";
@@ -110,6 +117,7 @@ public:
         cout << "-> not found\n";
     }
 
+    // 输出根结点和第一层孩子。
     void printStructure() const {
         cout << "root: ";
         printNode(root);

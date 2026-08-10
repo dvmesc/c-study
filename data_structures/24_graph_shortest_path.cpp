@@ -5,6 +5,7 @@ using namespace std;
 const int MAX_V = 5;
 const int INF = 1000000000;
 
+// 递归输出从源点到当前顶点的一条路径。
 void printPath(int predecessor[], int v) {
     if (predecessor[v] == -1) {
         cout << v;
@@ -14,6 +15,7 @@ void printPath(int predecessor[], int v) {
     cout << " -> " << v;
 }
 
+// Dijkstra：求单源最短路径。
 void dijkstra(const int graph[MAX_V][MAX_V], int n, int start) {
     int dist[MAX_V];
     int predecessor[MAX_V];
@@ -55,6 +57,7 @@ void dijkstra(const int graph[MAX_V][MAX_V], int n, int start) {
     }
 }
 
+// Floyd：求任意两点之间的最短路径。
 void floyd(int graph[MAX_V][MAX_V], int n) {
     int dist[MAX_V][MAX_V];
     int path[MAX_V][MAX_V];

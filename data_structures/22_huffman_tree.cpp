@@ -9,6 +9,7 @@ struct HuffmanNode {
     int right;
 };
 
+// 在当前未被合并的结点中选出权值最小的一个。
 int selectMin(const HuffmanNode tree[], int end) {
     int minIndex = -1;
     for (int i = 1; i <= end; ++i) {
@@ -22,6 +23,7 @@ int selectMin(const HuffmanNode tree[], int end) {
     return minIndex;
 }
 
+// 根据权值数组构造哈夫曼树。
 void createHuffmanTree(HuffmanNode tree[], const int weights[], int n) {
     int total = 2 * n - 1;
     for (int i = 1; i <= total; ++i) {
@@ -47,6 +49,7 @@ void createHuffmanTree(HuffmanNode tree[], const int weights[], int n) {
     }
 }
 
+// 输出哈夫曼树的顺序存储结构。
 void printHuffmanTree(const HuffmanNode tree[], int total) {
     cout << "index weight parent left right\n";
     for (int i = 1; i <= total; ++i) {
@@ -58,6 +61,7 @@ void printHuffmanTree(const HuffmanNode tree[], int total) {
     }
 }
 
+// 从叶子回溯到根，输出每个结点的哈夫曼编码。
 void printCodes(const HuffmanNode tree[], int n) {
     char code[100];
     code[n - 1] = '\0';
@@ -82,6 +86,7 @@ void printCodes(const HuffmanNode tree[], int n) {
     }
 }
 
+// 计算哈夫曼树的带权路径长度 WPL。
 int weightedPathLength(const HuffmanNode tree[], int n) {
     int result = 0;
 

@@ -18,6 +18,7 @@ class BPlusTreeDemo {
 private:
     BPlusNode* root;
 
+    // 手工构造一棵示例 B+ 树。
     BPlusNode* buildSampleTree() {
         //              [20 | 40]
         //            /     |      \
@@ -54,6 +55,7 @@ private:
         return r;
     }
 
+    // 释放整棵 B+ 树。
     void destroy(BPlusNode* node) {
         if (node == nullptr) {
             return;
@@ -66,6 +68,7 @@ private:
         delete node;
     }
 
+    // 根据关键字找到应落入的叶子结点。
     BPlusNode* findLeaf(int key) const {
         BPlusNode* current = root;
         while (current != nullptr && !current->isLeaf) {
@@ -79,16 +82,20 @@ private:
     }
 
 public:
+    // 初始化为空树。
     BPlusTreeDemo() : root(nullptr) {}
 
+    // 析构时释放结点。
     ~BPlusTreeDemo() {
         destroy(root);
     }
 
+    // 构造样例树。
     void buildSample() {
         root = buildSampleTree();
     }
 
+    // 演示单关键字查找。
     void search(int key) const {
         BPlusNode* leaf = findLeaf(key);
         cout << "search " << key << " in leaf: ";
@@ -106,6 +113,7 @@ public:
         cout << "not found " << key << '\n';
     }
 
+    // 演示区间查询。
     void rangeQuery(int left, int right) const {
         cout << "range [" << left << ", " << right << "]: ";
         BPlusNode* current = findLeaf(left);
@@ -125,6 +133,7 @@ public:
         cout << '\n';
     }
 
+    // 输出叶子结点链表。
     void printLeafChain() const {
         BPlusNode* current = root->children[0];
         cout << "leaf chain: ";

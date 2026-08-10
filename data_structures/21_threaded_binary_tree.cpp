@@ -18,6 +18,7 @@ private:
     ThreadNode* root;
     ThreadNode* pre;
 
+    // 构造一棵用于线索化演示的样例树。
     ThreadNode* buildSampleTree() {
         //        A
         //      /   \
@@ -39,6 +40,7 @@ private:
         return a;
     }
 
+    // 递归完成中序线索化。
     void inorderThread(ThreadNode* node) {
         if (node == nullptr) {
             return;
@@ -59,6 +61,7 @@ private:
         inorderThread(node->right);
     }
 
+    // 找到中序遍历下的第一个结点。
     ThreadNode* firstNode(ThreadNode* node) const {
         while (node != nullptr && node->ltag == 0) {
             node = node->left;
@@ -66,6 +69,7 @@ private:
         return node;
     }
 
+    // 找到当前结点在线索二叉树中的后继。
     ThreadNode* nextNode(ThreadNode* node) const {
         if (node->rtag == 1) {
             return node->right;
@@ -73,6 +77,7 @@ private:
         return firstNode(node->right);
     }
 
+    // 释放整棵线索二叉树。
     void destroy(ThreadNode* node) {
         if (node == nullptr) {
             return;
@@ -87,16 +92,20 @@ private:
     }
 
 public:
+    // 初始化为空树。
     InorderThreadedBinaryTree() : root(nullptr), pre(nullptr) {}
 
+    // 析构时释放树结点。
     ~InorderThreadedBinaryTree() {
         destroy(root);
     }
 
+    // 构造样例树。
     void buildSample() {
         root = buildSampleTree();
     }
 
+    // 对当前树执行中序线索化。
     void createInorderThread() {
         pre = nullptr;
         inorderThread(root);
@@ -105,6 +114,7 @@ public:
         }
     }
 
+    // 使用线索直接做中序遍历。
     void printInorderByThread() const {
         for (ThreadNode* current = firstNode(root); current != nullptr; current = nextNode(current)) {
             cout << current->data << ' ';
@@ -112,6 +122,7 @@ public:
         cout << '\n';
     }
 
+    // 输出每个结点的前驱和后继信息。
     void printThreadInfo() const {
         for (ThreadNode* current = firstNode(root); current != nullptr; current = nextNode(current)) {
             cout << current->data << ": ";

@@ -5,6 +5,7 @@ using namespace std;
 const int MAX_V = 6;
 const int INF = 1000000000;
 
+// 拓扑排序：输出一个合法的顶点先后顺序。
 bool topologicalSort(const int graph[MAX_V][MAX_V], int n, int topo[]) {
     int indegree[MAX_V] = {0};
     int stack[MAX_V];
@@ -42,6 +43,7 @@ bool topologicalSort(const int graph[MAX_V][MAX_V], int n, int topo[]) {
     return count == n;
 }
 
+// 关键路径：求 AOE 网中的关键活动。
 void criticalPath(const int graph[MAX_V][MAX_V], int n) {
     int topo[MAX_V];
     if (!topologicalSort(graph, n, topo)) {

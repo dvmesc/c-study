@@ -16,12 +16,14 @@ private:
     int parent[MAX_V];
 
 public:
+    // 初始化并查集。
     explicit UnionFind(int n) {
         for (int i = 0; i < n; ++i) {
             parent[i] = i;
         }
     }
 
+    // 查找结点所在集合的代表元。
     int find(int x) {
         if (parent[x] != x) {
             parent[x] = find(parent[x]);
@@ -29,6 +31,7 @@ public:
         return parent[x];
     }
 
+    // 合并两个集合。
     bool unite(int x, int y) {
         int rootX = find(x);
         int rootY = find(y);
@@ -40,6 +43,7 @@ public:
     }
 };
 
+// 按边权从小到大排序，供 Kruskal 使用。
 void sortEdges(Edge edges[], int m) {
     for (int i = 0; i < m - 1; ++i) {
         for (int j = 0; j < m - 1 - i; ++j) {
@@ -52,6 +56,7 @@ void sortEdges(Edge edges[], int m) {
     }
 }
 
+// Prim：从一个顶点出发逐步扩展最小生成树。
 void primMST(const int graph[MAX_V][MAX_V], int n) {
     int lowCost[MAX_V];
     int parent[MAX_V];
@@ -92,6 +97,7 @@ void primMST(const int graph[MAX_V][MAX_V], int n) {
     cout << "prim total weight: " << totalWeight << '\n';
 }
 
+// Kruskal：按边权从小到大选边，并避免成环。
 void kruskalMST(Edge edges[], int n, int m) {
     sortEdges(edges, m);
     UnionFind uf(n);
