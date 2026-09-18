@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\0\\IdeaProjects\\cppproject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\0\\IdeaProjects\\cppproject\\data_structures\\01_seq_list.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:data_structures\\01_seq_list.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\0\\IdeaProjects\\cppproject\\data_structures\\\u65B0\u5EFA\u6587\u4EF6||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:data_structures\\\u65B0\u5EFA\u6587\u4EF6||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "\u65B0\u5EFA\u6587\u4EF6",
+              "DocumentMoniker": "C:\\Users\\0\\IdeaProjects\\cppproject\\data_structures\\\u65B0\u5EFA\u6587\u4EF6",
+              "RelativeDocumentMoniker": "data_structures\\\u65B0\u5EFA\u6587\u4EF6",
+              "ToolTip": "C:\\Users\\0\\IdeaProjects\\cppproject\\data_structures\\\u65B0\u5EFA\u6587\u4EF6",
+              "RelativeToolTip": "data_structures\\\u65B0\u5EFA\u6587\u4EF6",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-08-18T08:34:11.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "01_seq_list.cpp",
+              "DocumentMoniker": "C:\\Users\\0\\IdeaProjects\\cppproject\\data_structures\\01_seq_list.cpp",
+              "RelativeDocumentMoniker": "data_structures\\01_seq_list.cpp",
+              "ToolTip": "C:\\Users\\0\\IdeaProjects\\cppproject\\data_structures\\01_seq_list.cpp",
+              "RelativeToolTip": "data_structures\\01_seq_list.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-08-18T08:34:04.957Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
